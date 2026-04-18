@@ -34,6 +34,13 @@ app.use("/", (req, res) => {
   res.send("Hello World welcome to my The True Topper API");
 });
 
+app.use("/api/", (req, res) => {
+  res.send("Hello World welcome to my The True Topper API222");
+});
+
+
+
+
 const PORT = process.env.PORT || 8000;
 
 connectDB().then(() => {
