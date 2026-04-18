@@ -30,13 +30,13 @@ app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/notes", noteRoutes);
-app.use("/", (req, res) => {
+app.get("/", (req, res) => {
   res.send("Hello World welcome to my The True Topper API");
 });
-
-app.use("/api/", (req, res) => {
+app.get("/api", (req, res) => {
   res.send("Hello World welcome to my The True Topper API222");
 });
+
 
 
 
