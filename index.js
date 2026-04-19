@@ -25,7 +25,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://thetruetopperr.netlify.app",
+    origin:  process.env.FRONTEND_URL,
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
