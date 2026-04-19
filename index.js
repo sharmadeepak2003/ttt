@@ -14,14 +14,24 @@ dns.setServers(["8.8.8.8", "8.8.4.4"]);
 
 const app = express();
 
+// app.use(
+//   cors({
+//     origin: [
+//       process.env.FRONTEND_URL,
+//     ],
+//     credentials: true,
+//   }),
+// );
+
 app.use(
   cors({
-    origin: [
-      process.env.FRONTEND_URL,
-    ],
+    origin: "https://thetruetopperr.netlify.app",
     credentials: true,
-  }),
+    methods: ["GET", "POST", "PUT", "DELETE"],
+  })
 );
+
+
 console.log(process.env.FRONTEND_URL_NETLIFY, "frontend url");
 
 app.use(express.json());
