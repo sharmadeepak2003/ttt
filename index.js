@@ -28,8 +28,20 @@ app.use(express.json());
 
 app.use(cookieParser());
 
-app.use("/api/auth", authRoutes);
-app.use("/api/notes", noteRoutes);
+// app.use("/api/auth", authRoutes);
+// app.use("/api/notes", noteRoutes,);
+
+app.use("/api/auth", (req, res, next) => {
+  console.log("auth API hit hua 🔥");
+  next();
+}, authRoutes);
+
+app.use("/api/notes", (req, res, next) => {
+  console.log("Notes API hit hua 🔥");
+  next();
+}, noteRoutes);
+
+
 app.get("/", (req, res) => {
   res.send("Hello World welcome to my The True Topper API");
 });
